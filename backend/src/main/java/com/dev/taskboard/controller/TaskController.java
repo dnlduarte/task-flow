@@ -27,5 +27,19 @@ public class TaskController {
         return repository.save(task);
     }
 
+    @PutMapping("/{id}")
+    public Task update(@PathVariable Long id, @RequestBody Task dados){
+        Task task = repository.findById(id).orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
 
+        task.setTitle(dados.getTitle());
+        task.setDescription(dados.getDescription());
+        task.setDone(dados.isDone());
+
+        return repository.save(task);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 }
