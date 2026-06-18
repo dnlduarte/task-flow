@@ -77,7 +77,7 @@ function App() {
 
         {/* Header */}
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-800">Taskboard</h1>
+          <h1 className="text-3xl font-bold text-slate-800">Task-Flow</h1>
           <p className="text-slate-500 mt-1">
             {tasks.length} tarefa{tasks.length !== 1 ? "s" : ""} •{" "}
             {completed.length} concluída{completed.length !== 1 ? "s" : ""}
